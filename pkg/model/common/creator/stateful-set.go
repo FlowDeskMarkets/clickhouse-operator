@@ -54,7 +54,7 @@ func (c *Creator) CreateStatefulSet(host *api.Host, shutdown bool) *apps.Statefu
 
 			PodManagementPolicy: apps.OrderedReadyPodManagement,
 			UpdateStrategy: apps.StatefulSetUpdateStrategy{
-				Type: apps.RollingUpdateStatefulSetStrategyType,
+				Type: apps.OnDeleteStatefulSetStrategyType,
 			},
 			RevisionHistoryLimit: chop.Config().GetRevisionHistoryLimit(),
 		},
